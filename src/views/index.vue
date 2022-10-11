@@ -7,7 +7,6 @@
       <div class="tabletable_top">
         <div class="tableTitle">用户列表</div>
         <el-button type="primary" size="small" @click="add">新增</el-button>
-        <el-button type="primary" size="small" @click="download">下载</el-button>
       </div>
       <div class="tablelist">
         <el-table ref="tableData" :data="tableData" border>
