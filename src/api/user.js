@@ -13,6 +13,9 @@ export const deleteList = (data) => {
     url: "/user/delete",
     method: "post",
     data: data,
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
   });
 };
 
@@ -21,6 +24,9 @@ export const update = (data) => {
     url: "/user/update",
     method: "post",
     data: data,
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
   });
 };
 
@@ -30,8 +36,7 @@ export const upload = (data) => {
     method: "post",
     data: data,
     headers: {
-      "Content-Type":"multipart/form-data"
-    }
+      "Content-Type": "multipart/form-data",
+    },
   });
 };
-

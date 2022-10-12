@@ -8,9 +8,9 @@
         <div class="tableTitle">用户列表</div>
         <el-upload
           class="upload-demo"
-          action="http://localhost:8080/api/user/uploadfile"
-          :on-change="handleChange"
-          :file-list="fileList"
+          action="/api/user/uploadfile"
+          :on-success="handleSuccess"
+          :on-error="handleError"
         >
           <el-button size="small" type="primary">点击上传</el-button>
         </el-upload>
@@ -172,11 +172,17 @@ export default {
         window.open("http://localhost:3000/user/download", "self");
       }
     },
-    handleChange(file) {
-      let formData = new FormData();
-      formData.append("file", file.raw);
-      upload(formData).then((res) => {
-        console.log(res);
+    handleSuccess(file) {
+      this.$message({
+        type: "success",
+        message: "导入成功"
+      });
+      this.onQuery();
+    },
+    handleError() {
+      this.$message({
+        type: "error",
+        message: "导入失败"
       });
     }
   }
@@ -204,3 +210,4 @@ export default {
   }
 }
 </style>
+ 
