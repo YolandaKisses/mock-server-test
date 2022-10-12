@@ -13,9 +13,7 @@ export const deleteList = (data) => {
     url: "/user/delete",
     method: "post",
     data: data,
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
   });
 };
 
@@ -24,9 +22,6 @@ export const update = (data) => {
     url: "/user/update",
     method: "post",
     data: data,
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
   });
 };
 

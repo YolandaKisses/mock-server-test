@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import qs from 'qs'
 
 import VXETable from 'vxe-table'
 import 'vxe-table/lib/style.css'
@@ -14,6 +15,7 @@ import 'dd-ui-library/dd-ui-library.css'
 import CommonUtils from 'dd-ui-library/utils/index.js'
 
 Vue.prototype.$CommonUtils = CommonUtils
+Vue.prototype.$qs = qs
 
 Vue.use(VXETable);
 Vue.use(ElementUI)
