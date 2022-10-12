@@ -56,7 +56,6 @@ export default {
   components: { edit },
   data() {
     return {
-      additionalData: { type: "init" },
       fileList: [],
       that: this,
       formQuery: {
