@@ -6,6 +6,14 @@
       </div>
       <div class="tabletable_top">
         <div class="tableTitle">用户列表</div>
+        <el-upload
+          class="upload-demo"
+          action="http://localhost:8080/api/user/uploadfile"
+          :on-change="handleChange"
+          :file-list="fileList"
+        >
+          <el-button size="small" type="primary">点击上传</el-button>
+        </el-upload>
         <el-button type="primary" size="small" @click="add">新增</el-button>
         <el-button type="primary" size="small" @click="download">下载</el-button>
       </div>
@@ -49,8 +57,7 @@
 </template>
 
 <script>
-import { getUserInfo, deleteList } from "../api/user";
-import request from "../utils/request";
+import { getUserInfo, deleteList, upload } from "../api/user";
 import edit from "./edit.vue";
 export default {
   components: { edit },
@@ -164,6 +171,13 @@ export default {
       } else {
         window.open("http://localhost:3000/user/download", "self");
       }
+    },
+    handleChange(file) {
+      let formData = new FormData();
+      formData.append("file", file.raw);
+      upload(formData).then((res) => {
+        console.log(res);
+      });
     }
   }
 };

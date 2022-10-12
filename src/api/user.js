@@ -23,3 +23,15 @@ export const update = (data) => {
     data: data,
   });
 };
+
+export const upload = (data) => {
+  return request({
+    url: "user/uploadfile",
+    method: "post",
+    data: data,
+    headers: {
+      "Content-Type":"multipart/form-data"
+    }
+  });
+};
+
