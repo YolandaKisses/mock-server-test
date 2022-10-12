@@ -7,6 +7,7 @@
       <div class="tabletable_top">
         <div class="tableTitle">用户列表</div>
         <el-button type="primary" size="small" @click="add">新增</el-button>
+        <el-button type="primary" size="small" @click="download">下载</el-button>
       </div>
       <div class="tablelist">
         <el-table ref="tableData" :data="tableData" border>
@@ -159,7 +160,11 @@ export default {
       this.onQuery();
     },
     download() {
-      window.open("http://localhost:3000/user/download", "self");
+      if (this.formQuery.selectVal) {
+        window.open(`http://localhost:3000/user/download?selectVal=${this.formQuery.selectVal}`, "self");
+      } else {
+        window.open("http://localhost:3000/user/download", "self");
+      }
     }
   }
 };
