@@ -12,7 +12,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import DataDriverUI from 'dd-ui-library'
 import 'dd-ui-library/dd-ui-library.css'
 // 工具类
-import CommonUtils from 'dd-ui-library/utils/index.js'
+import CommonUtils from 'dd-ui-library/lib/utils/index.js'
 
 Vue.prototype.$CommonUtils = CommonUtils
 Vue.prototype.$qs = qs
