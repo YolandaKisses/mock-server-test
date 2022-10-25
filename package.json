@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^1.1.2",
     "core-js": "^3.8.3",
-    "dd-ui-library": "^1.0.23",
+    "dd-ui-library": "^1.0.31",
     "element-ui": "^2.15.10",
     "qs": "^6.11.0",
     "vue": "^2.6.14",

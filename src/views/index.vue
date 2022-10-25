@@ -6,16 +6,17 @@
       </div>
       <div class="tabletable_top">
         <div class="tableTitle">用户列表</div>
-        <el-upload
-          class="upload-demo"
-          action="/api/user/uploadfile"
-          :on-success="handleSuccess"
-          :on-error="handleError"
-        >
-          <el-button size="small" type="primary">点击上传</el-button>
-        </el-upload>
-        <el-button type="primary" size="small" @click="add">新增</el-button>
-        <el-button type="primary" size="small" @click="download">下载</el-button>
+        <div class="tableRight">
+          <el-upload
+            class="upload-demo"
+            action="/api/user/uploadfile"
+            :on-success="handleSuccess"
+            :on-error="handleError"
+          >
+            <el-button size="small" type="primary">点击上传</el-button>
+          </el-upload>
+          <el-button type="primary" size="small" @click="add" style="margin-left: 10px">新增</el-button>
+        </div>
       </div>
       <div class="tablelist">
         <el-table ref="tableData" :data="tableData" border>
@@ -84,11 +85,11 @@ export default {
         }
       ],
       buttonList: [
+        { name: "下载", size: "small", type: "primary", click: this.download },
         {
           name: "查询",
           type: "primary",
           size: "small",
-          icon: "el-icon-search",
           loading: false,
           click: this.onQuery
         },
@@ -119,6 +120,7 @@ export default {
   },
   created() {
     this.onQuery();
+    console.log(this.$CommonUtils.timeStamp2String("1652508000000", 9));
   },
   methods: {
     onQuery() {
@@ -197,16 +199,18 @@ export default {
 .tabletable_top {
   margin-top: 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
   font-size: 14px;
-
   .tableTitle {
     border-left: 3px solid #4f95dd;
     padding-left: 10px;
     color: #4f95dd;
     font-weight: bold;
+  }
+  .tableRight {
+    display: flex;
   }
 }
 </style>

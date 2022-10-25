@@ -45,9 +45,9 @@ export default {
       editForm: {
         id: "",
         name: "",
+        isMale: "",
         mail: "",
-        address: "",
-        isMale: ""
+        address: ""
       },
       options: [
         { dimCde: 1, dimNme: "男" },
